@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import './questionario.dart';
+import './inicio.dart';
 
+bool pressionado = true;
 main() {
-  runApp(AulaComponentes());
+  runApp(Inicio());
 }
 
 class AulaComponentes extends StatefulWidget {
@@ -13,7 +15,6 @@ class AulaComponentes extends StatefulWidget {
 
 class _AulaComponentesState extends State<AulaComponentes> {
   var perguntaAtual = 0;
-
 
   final List<Map<String, Object>> perguntas = [
     {
@@ -37,13 +38,9 @@ class _AulaComponentesState extends State<AulaComponentes> {
     print(perguntaAtual);
   }
 
-  void responder(){
-
-  }
-   
+  void responder() {}
 
   Widget build(BuildContext context) {
-  
     List<Widget> respostas = [];
     return MaterialApp(
       home: Scaffold(
@@ -51,9 +48,7 @@ class _AulaComponentesState extends State<AulaComponentes> {
             title: Text("Jogo de Respostas"),
           ),
           body: Questionario(
-              perguntas: perguntas,
-              perguntaAtual: perguntaAtual,
-              acao: acao)),
+              perguntas: perguntas, perguntaAtual: perguntaAtual, acao: acao)),
     );
   }
 }
